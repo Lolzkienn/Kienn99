@@ -3,93 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #000; /* Set background to black */
-            color: #fff; /* Set text color to white for contrast */
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .login-container {
-            padding: 30px;
-            background-color: #1c1c1c; /* Dark grey background for the form */
-            border-radius: 15px;
-            width: 320px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-        }
-        .logo {
-            margin-bottom: 20px;
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border: 1px solid #555;
-            background-color: #333;
-            color: white;
-        }
-        input[type="submit"], .skip-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        .skip-button {
-            background-color: #888; /* Different color for the skip button */
-        }
-        .skip-button:hover {
-            background-color: #777;
-        }
-    </style>
+    <title>Stand Alone Senior High School</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="login-container">
-        <img src="logo.png" alt="Mystery Shop" class="logo">
-        <form onsubmit="return handleLogin(event)">
-            <input type="text" id="userId" name="userId" placeholder="User ID" required><br>
-            <input type="password" id="password" name="password" placeholder="Password" required><br>
-            <input type="submit" value="Login">
-        </form>
-        <button class="skip-button" onclick="skipToHomepage()">Skip to Homepage</button>
-    </div>
+    <!-- Header / Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Stand Alone Senior High School</h1>
+            <p>Empowering students to succeed in a fast-paced world.</p>
+            <a href="contacts.html" class="btn">Get in Touch</a>
+        </div>
+    </header>
 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <button id="menu-toggle" class="menu-button">☰</button>
+        <div id="menu" class="menu-content">
+            <a href="index.html">Home</a>
+            <a href="activities.html">Activities / Gallery</a>
+            <a href="schedule.html">Schedule Events</a>
+            <a href="organization.html">Organizational Chart</a>
+            <a href="contacts.html">Contacts</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Intro Section -->
+        <section class="intro">
+            <h2>Our Mission & Vision</h2>
+            <p>We are committed to fostering a community of inspired learners, future leaders, and compassionate individuals. Our goal is to prepare students with the skills they need for success in higher education and beyond.</p>
+        </section>
+
+        <!-- Strand Offers Section -->
+        <section class="strands">
+            <h2>Our Strand Offers</h2>
+            <div class="strand-container">
+                <div class="strand">
+                    <h3>STEM</h3>
+                    <p>Science, Technology, Engineering, and Mathematics prepare students for technical and scientific careers.</p>
+                </div>
+                <div class="strand">
+                    <h3>GAS</h3>
+                    <p>The General Academic Strand offers flexibility for students exploring diverse fields of study.</p>
+                </div>
+                <div class="strand">
+                    <h3>HUMSS</h3>
+                    <p>Humanities and Social Sciences focus on developing critical thinking and leadership in social and human services.</p>
+                </div>
+                <div class="strand">
+                    <h3>ICT</h3>
+                    <p>Information and Communications Technology equips students with skills in programming, web development, and multimedia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section class="highlights">
+            <div class="highlight">
+                <h3>Dedicated Teachers</h3>
+                <p>Our experienced faculty is passionate about guiding and mentoring students.</p>
+            </div>
+            <div class="highlight">
+                <h3>Advanced Facilities</h3>
+                <p>We provide top-notch resources, including modern classrooms, labs, and sports facilities.</p>
+            </div>
+            <div class="highlight">
+                <h3>Student-Centered Programs</h3>
+                <p>Our curriculum includes diverse academic and extracurricular activities to nurture all aspects of student growth.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Stand Alone Senior High School. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100073970676519"><img src="images.png" alt="Facebook"></a>
+                <a href="#"><img src="assets/icons/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="assets/icons/instagram-icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript for Interactivity -->
     <script>
-        function handleLogin(event) {
-            event.preventDefault(); // Prevent form submission
-
-            // Add any necessary validation here
-            const userId = document.getElementById('userId').value;
-            const password = document.getElementById('password').value;
-
-            // For example, simple validation
-            if (userId === "admin" && password === "password") {
-                // If credentials are correct, redirect to homepage
-                window.location.href = "homepage.html"; // Redirect to the homepage
-            } else {
-                alert("Invalid User ID or Password!"); // Show an error alert
-            }
-        }
-
-        function skipToHomepage() {
-            window.location.href = "pj2.html"; // Redirect to the homepage
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuButton = document.querySelector('.menu-button');
+        const menuContent = document.querySelector('.menu-content');
+        
+        menuButton.addEventListener('click', () => {
+            menuContent.classList.toggle('active');
+        });
+    });
     </script>
-
+    
 </body>
-</html>
+                </html>
