@@ -259,3 +259,26 @@ footer {
     transform: scale(1.2);
     filter: grayscale(0%);
 }
+/* Gallery Section */
+.gallery-container {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center;
+    gap: 20px; /* Add spacing between images */
+    padding: 40px;
+    background-color: var(--background-light);
+}
+
+.gallery-container img {
+    width: 100%; /* Make images responsive */
+    max-width: 500px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for better visibility */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
